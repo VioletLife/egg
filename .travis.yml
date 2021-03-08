@@ -11,12 +11,12 @@ node_js:
   - '12'
   - '14'
 before_install:
-  - npm install -g npminstall
+  - npm install -g pnpm
 install:
-  - npminstall
-  - npminstall codecov
+  - pnpm install
+  - pnpm codecov
 script:
-  - npm run ci
+  - pnpm run ci
 after_script:
   - codecov
   - test $TRAVIS_NODE_VERSION = 8 && travis_wait scripts/doc_travis.sh
